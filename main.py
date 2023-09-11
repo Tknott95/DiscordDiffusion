@@ -33,9 +33,8 @@ async def on_message(message):
     if message.content.startswith('!image'):
         match = re.search(r"!image (.*)", message.content)
 
-        x = match.group(1)
-        print(x)
-        image_sending = _diffusion.run('new', x)
+        print(match.group(1))
+        image_sending = _diffusion.run('new', match.group(1))
 
         await message.channel.send(file=discord.File('new.jpg'))
 
