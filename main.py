@@ -33,7 +33,7 @@ async def on_message(message):
     if message.content.startswith('!image'):
         match = re.search(r"!image (.*)", message.content)
 
-        x = f'{match}'
+        x = match.group(1)
         print(x)
         image_sending = _diffusion.run('new', x)
 
